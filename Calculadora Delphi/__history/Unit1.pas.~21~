@@ -1,0 +1,75 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    btn01: TButton;
+    btn02: TButton;
+    btn03: TButton;
+    btn07: TButton;
+    btn04: TButton;
+    btn05: TButton;
+    btn06: TButton;
+    btn08: TButton;
+    btn09: TButton;
+    btn0: TButton;
+    btnIgual: TButton;
+    btnSoma: TButton;
+    btnSubtrair: TButton;
+    btnMultiplicar: TButton;
+    Button5: TButton;
+    btnDividir: TButton;
+    moResultado: TMemo;
+    edtVisor: TEdit;
+    bntLimpar: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure btn0Click(Sender: TObject);
+  private
+    { Private declarations }
+    valor_atual : double;
+    operacao : integer;
+    limpar : boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btn0Click(Sender: TObject);
+begin
+ if limpar then
+
+   begin
+     edtVisor.Text := '';
+     limpar := false;
+   end;
+
+ if edtVisor.Text = '0' then
+
+   begin
+     edtVisor.Text := '';
+   end;
+
+ edtVisor.Text := edtVisor.Text + '0';
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+
+  begin
+  operacao := 0;
+  valor_atual := 0;
+  limpar := false;
+  end;
+
+end.
